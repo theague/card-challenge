@@ -16,6 +16,7 @@ You should, read the data from usersArray and insert it to the DOM programmatica
 
 - Use the data included in `index.js`.
 - Font must be [Roboto](https://fonts.google.com/specimen/Roboto?sidebar.open=true&selection.family=Roboto:wght@300) with its variations.
+- Use this for the image: http://place-puppy.com/200x200
 
 ![design for the challenge](card.png)
 
