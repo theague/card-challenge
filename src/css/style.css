@@ -22,7 +22,9 @@ img {
 #content {
 
 }
-
+ul {
+    list-style-type: none;
+}
 #username {
     font-size: 1.5rem;
     font-weight: 700;
@@ -37,7 +39,7 @@ img {
 
 }
 
-#address {
+#address1, #address2 {
     font-size: 1.2rem;
-    margin-top: .5rem;
+    margin-top: 0;
 }
