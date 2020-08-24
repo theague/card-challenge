@@ -33,10 +33,3 @@ document.getElementById("username").innerHTML = "@" + username;
 document.getElementById("name").innerHTML = name;
 document.getElementById("address1").innerHTML = street;
 document.getElementById("address2").innerHTML = city + ", " + state + " " + zipcode;
-
-
-
-
-
-
-console.log(name, username, street, city, state, zipcode);
