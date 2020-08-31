@@ -1,39 +1,12 @@
-const usersArray = [
-  {
-    id: 2,
-    name: "Jaime Rios",
-    username: "papaponmx",
-    email: "jaime.rios.dev@outlook.com",
-    address: {
-      street: "9397 Bridge Street",
-      suite: "Suite 879",
-      city: "Auburn",
-      state: "NY",
-      zipcode: "13021",
-      geo: {
-        lat: "-43.9509",
-        lng: "-34.4618",
-      },
-    },
-  },
-  {
-    id: 4,
-    name: "Lillte Puppy",
-    username: "dogscout",
-    email: "dogscout@outlook.com",
-    address: {
-      street: "9397 Bridge Street",
-      suite: "Suite 179",
-      city: "Auburn",
-      state: "NY",
-      zipcode: "13021",
-      geo: {
-        lat: "-43.9509",
-        lng: "-34.4618",
-      },
-    },
-  },
-];
+/***
+ *
+ *  CARD JSON CHALLENGE
+ *
+ *  Use the knowledge from previous lessons in order to read
+ *  the files from users.json in order to create a markup similar
+ *  to what we had before. For this challenge You MUST USE promises.
+ *  I have left the notes from our previous call.
+ */
 
 // How would this work with more than one card?
 
