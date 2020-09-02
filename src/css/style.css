@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
-#card {
+.card-list {
     display: flex;
     height: 220px;
     width: 475px;
@@ -20,11 +20,13 @@ img {
 }
 
 #content {
-
+    
 }
+
 ul {
     list-style-type: none;
 }
+
 #username {
     font-size: 1.5rem;
     font-weight: 700;

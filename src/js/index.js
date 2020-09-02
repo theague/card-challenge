@@ -1,4 +1,4 @@
-/***
+/*
  *
  *  CARD JSON CHALLENGE
  *
@@ -21,7 +21,6 @@ const renderCardTemplate = ({
   src = 'http://place-puppy.com/200x200',
   state,
   street,
-  suite,
   username,
   zipcode,
 }) => `<div id="card">
@@ -40,39 +39,38 @@ const renderCardTemplate = ({
 `;
 
 
-
-
 // 3. Create a template for each user in usersArray
-usersArray.forEach(({
-  address: {
-    street,
-    city,
-    state,
-    zipcode,
-  },
-  name,
-  username,
-}) => {
 
-const cardTemplate = renderCardTemplate({
-    city,
-    name,
-    state,
-    street,
-    username,
-    zipcode,
+fetch("js/users.json")
+  .then(resp => resp.json())
+  .then(data => {console.log(data[0])
+  
+    data.forEach(({
+      address: {
+        street,
+        city,
+        state,
+        zipcode,
+      },
+      name,
+      username,
+    }) => {
+    
+    const cardTemplate = renderCardTemplate({
+        city,
+        name,
+        state,
+        street,
+        username,
+        zipcode,
+      });
+  
+    // Create a new list item
+    const cardNodeElement = document.createElement("LI");
+    cardNodeElement.innerHTML = cardTemplate;
+  
+    //4. Add list item to card-list in the DOM.
+    document.getElementsByClassName('card-list')[0].appendChild(cardNodeElement);
+
   });
-
-  // Create a new list item
-  const cardNodeElement = document.createElement("LI");
-  cardNodeElement.innerHTML = cardTemplate;
-  //4. Add list item to card-list in the DOM.
-  document.getElementsByClassName('card-list')[0].appendChild(cardNodeElement);
-
 });
-
-
-// 1. For each a function takes in as a parameter user from users array
-// 2. within the foreach function, we are calling renderCardTemplate
-// 3. renderCarTemplate is returning a string
-// 4. template is string is being appended to .card-list
