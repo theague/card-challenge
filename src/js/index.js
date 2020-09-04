@@ -18,7 +18,7 @@
 const renderCardTemplate = ({
   city,
   name,
-  src = 'http://place-puppy.com/200x200',
+  src = "http://place-puppy.com/200x200",
   state,
   street,
   username,
@@ -38,39 +38,30 @@ const renderCardTemplate = ({
 </div>
 `;
 
-
 // 3. Create a template for each user in usersArray
 
 fetch("js/users.json")
-  .then(resp => resp.json())
-  .then(data => {console.log(data[0])
-  
-    data.forEach(({
-      address: {
-        street,
-        city,
-        state,
-        zipcode,
-      },
-      name,
-      username,
-    }) => {
-    
-    const cardTemplate = renderCardTemplate({
-        city,
-        name,
-        state,
-        street,
-        username,
-        zipcode,
-      });
-  
-    // Create a new list item
-    const cardNodeElement = document.createElement("LI");
-    cardNodeElement.innerHTML = cardTemplate;
-  
-    //4. Add list item to card-list in the DOM.
-    document.getElementsByClassName('card-list')[0].appendChild(cardNodeElement);
+  .then((resp) => resp.json())
+  .then((data) => {
+    data.forEach(
+      ({ address: { street, city, state, zipcode }, name, username }) => {
+        const cardTemplate = renderCardTemplate({
+          city,
+          name,
+          state,
+          street,
+          username,
+          zipcode,
+        });
 
+        // Create a new list item
+        const cardNodeElement = document.createElement("LI");
+        cardNodeElement.innerHTML = cardTemplate;
+
+        //4. Add list item to card-list in the DOM.
+        document
+          .getElementsByClassName("card-list")[0]
+          .appendChild(cardNodeElement);
+      }
+    );
   });
-});
