@@ -19,12 +19,12 @@ img {
     margin: 2rem 2rem 0 2.5rem;
 }
 
-#content {
-    
-}
-
 ul {
     list-style-type: none;
+}
+
+li:nth-child(3) {
+    display: none;
 }
 
 #username {
