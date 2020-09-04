@@ -23,16 +23,17 @@ const renderCardTemplate = ({
   street,
   username,
   zipcode,
-}) => `<div id="card">
-<div id="imgBox">
+}) => `
+<div class="card">
+<div class="imgBox">
 <img src="${src}" alt="a puppy photo">
 </div>
-<div id="content">
+<div class="content">
     <ul>
-        <li id="username">@${username}</li>
-        <li id="name">${name}</li>
-        <li id="address1">${street}</li>
-        <li id="address2">${city}, ${state} ${zipcode}</li>
+        <li class="username">@${username}</li>
+        <li class="name">${name}</li>
+        <li class="address1">${street}</li>
+        <li class="address2">${city}, ${state} ${zipcode}</li>
     </ul>
 </div>
 </div>
@@ -41,18 +42,35 @@ const renderCardTemplate = ({
 // 3. Create a template for each user in usersArray
 
 fetch("js/users.json")
-  .then((resp) => resp.json())
-  .then((data) => {
-    data.forEach(
-      ({ address: { street, city, state, zipcode }, name, username }) => {
-        const cardTemplate = renderCardTemplate({
-          city,
-          name,
-          state,
-          street,
-          username,
-          zipcode,
-        });
+  .then(resp => resp.json())
+  .then(data => {console.log(data[0])
+
+    data.forEach(({
+      address: {
+        street,
+        city,
+        state,
+        zipcode,
+      },
+      name,
+      username,
+    }) => {
+
+    const cardTemplate = renderCardTemplate({
+        city,
+        name,
+        state,
+        street,
+        username,
+        zipcode,
+      });
+
+    // Create a new list item
+    const cardNodeElement = document.createElement("LI");
+    cardNodeElement.innerHTML = cardTemplate;
+
+    //4. Add list item to card-list in the DOM.
+    document.getElementsByClassName('card-list')[0].appendChild(cardNodeElement);
 
         // Create a new list item
         const cardNodeElement = document.createElement("LI");
